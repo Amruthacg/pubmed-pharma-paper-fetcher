@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "pubmed-pharma-paper-fetcher"
+version = "0.1.0"
+description = ""
+authors = ["Amrutha CG <amruthacgowda22@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "pubmed_fetcher", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.13"
+requests = ">=2.32.4,<3.0.0"
+pandas = ">=2.3.1,<3.0.0"
+typer = ">=0.16.0,<0.17.0"
+beautifulsoup4 = ">=4.13.4,<5.0.0"
+lxml = ">=6.0.0,<7.0.0"
+openpyxl = ">=3.1.5,<4.0.0"
+
+[tool.poetry.scripts]
+get-papers-list = "pubmed_fetcher.cli.main:app"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
